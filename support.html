@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - VINTAGE VAULT</title>
+    <meta name="description" content="Support and FAQ for VINTAGE VAULT - Guitar & Amp Collection Manager">
+    <link rel="icon" type="image/png" href="images/app_icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #C9A227;
+            --gold-light: #E8D48A;
+            --gold-dark: #8B7355;
+            --black: #0A0A0A;
+            --dark: #111111;
+            --darker: #080808;
+            --white: #FAFAFA;
+            --gray: #888888;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Page Content */
+        .page-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+
+        .page-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--white), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-content .subtitle {
+            color: var(--gray);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .page-content h2 {
+            font-size: 1.3rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+
+        .page-content p, .page-content li {
+            color: var(--gray);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .page-content ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-content a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .page-content a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Card */
+        .contact-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .contact-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card p {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--black);
+            font-weight: 600;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-email:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(201, 162, 39, 0.3);
+            text-decoration: none;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .faq-question::before {
+            content: 'Q';
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background: var(--gold);
+            color: var(--black);
+            font-size: 0.8rem;
+            font-weight: 700;
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+
+        .faq-answer {
+            color: var(--gray);
+            padding-left: 2.25rem;
+            line-height: 1.7;
+        }
+
+        /* Features List */
+        .feature-list {
+            display: grid;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+        }
+
+        .feature-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .feature-text h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-text p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem;
+            background: var(--darker);
+            border-top: 1px solid var(--glass-border);
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .page-content {
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            .page-content h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/app_icon.png" alt="VINTAGE VAULT">
+                <span class="logo-text">VINTAGE VAULT</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="index.html#download">Download</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <main class="page-content">
+        <h1>Support</h1>
+        <p class="subtitle">We're here to help you get the most out of VINTAGE VAULT.</p>
+
+        <!-- Contact Card -->
+        <div class="contact-card">
+            <h3>Need Help?</h3>
+            <p>Have questions, found a bug, or want to suggest a feature? We'd love to hear from you.</p>
+            <a href="mailto:support@example.com" class="contact-email">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                support@example.com
+            </a>
+        </div>
+
+        <h2>Getting Started</h2>
+        <div class="feature-list">
+            <div class="feature-item">
+                <span class="feature-icon">➕</span>
+                <div class="feature-text">
+                    <h4>Add Your First Item</h4>
+                    <p>Tap the + button in the top right corner to add a guitar, amp, or pedal to your collection.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">📸</span>
+                <div class="feature-text">
+                    <h4>Add Photos</h4>
+                    <p>Select up to 10 photos from your library for each item. Tap the photo area to add more.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">✏️</span>
+                <div class="feature-text">
+                    <h4>Edit Details</h4>
+                    <p>Tap any item to view details, then use the menu (•••) to edit or delete.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🖼️</span>
+                <div class="feature-text">
+                    <h4>Set Splash Image</h4>
+                    <p>Long-press any photo to set it as your custom splash screen when the app launches.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <div class="faq-question">How many photos can I add per item?</div>
+            <p class="faq-answer">You can add up to 10 photos for each gear item. Photos can be added when creating a new item or when editing an existing one.</p>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Is my data backed up?</div>
+            <p class="faq-answer">Currently, all data is stored locally on your device. If you uninstall the app, your data will be deleted. We recommend keeping your own photo backups. Cloud sync is planned for a future update.</p>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Can I export my collection?</div>
+            <p class="faq-answer">Export functionality is coming in a future update. This will include options to export as PDF, CSV, or image gallery.</p>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">How do I remove ads?</div>
+            <p class="faq-answer">You can remove all advertisements by purchasing the "Remove Ads" option in Settings. This is a one-time purchase that unlocks the ad-free experience permanently.</p>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">What's the random splash feature?</div>
+            <p class="faq-answer">When enabled in Settings, the app will randomly select one of your gear photos to display on the launch screen each time you open the app. It's a fun way to rediscover your collection!</p>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Can I use this for other gear like keyboards or microphones?</div>
+            <p class="faq-answer">Currently, the app supports guitars, amps, and pedals. More categories are planned for future updates based on user feedback.</p>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Is there an iPad version?</div>
+            <p class="faq-answer">The app works on iPad, but is currently optimized for iPhone. A dedicated iPad layout with multi-column support is planned for a future update.</p>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">My app is crashing. What should I do?</div>
+            <p class="faq-answer">Please try the following: 1) Make sure you have the latest version of the app from the App Store. 2) Restart your device. 3) If the issue persists, please contact us with details about when the crash occurs.</p>
+        </div>
+
+        <h2>App Information</h2>
+        <ul>
+            <li><strong>Version:</strong> 1.0</li>
+            <li><strong>Requires:</strong> iOS 17.0 or later</li>
+            <li><strong>Size:</strong> Varies (depends on your collection)</li>
+            <li><strong>Languages:</strong> English, Japanese</li>
+        </ul>
+
+        <h2>Feedback & Feature Requests</h2>
+        <p>
+            We're constantly improving VINTAGE VAULT based on feedback from collectors like you. If you have ideas for new features or improvements, please don't hesitate to reach out.
+        </p>
+        <p>
+            Some features we're considering for future updates:
+        </p>
+        <ul>
+            <li>iCloud sync across devices</li>
+            <li>Search and filter functionality</li>
+            <li>Sort options (by name, year, price, etc.)</li>
+            <li>More gear categories</li>
+            <li>Export to PDF/CSV</li>
+            <li>Collection statistics and insights</li>
+            <li>Apple Watch companion app</li>
+        </ul>
+
+        <div class="contact-card">
+            <h3>Love the App?</h3>
+            <p>If VINTAGE VAULT helps you manage your collection, please consider leaving a review on the App Store. It helps other collectors find the app!</p>
+            <a href="https://apps.apple.com/app/vintage-vault" class="contact-email" style="background: linear-gradient(135deg, #007AFF, #5856D6);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                </svg>
+                Rate on App Store
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 VINTAGE VAULT. All rights reserved.</p>
+    </footer>
+</body>
+</html>

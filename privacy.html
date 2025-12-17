@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - VINTAGE VAULT</title>
+    <meta name="description" content="Privacy Policy for VINTAGE VAULT - Guitar & Amp Collection Manager">
+    <link rel="icon" type="image/png" href="images/app_icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #C9A227;
+            --gold-light: #E8D48A;
+            --gold-dark: #8B7355;
+            --black: #0A0A0A;
+            --dark: #111111;
+            --darker: #080808;
+            --white: #FAFAFA;
+            --gray: #888888;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Page Content */
+        .page-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+
+        .page-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--white), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-content .last-updated {
+            color: var(--gray);
+            margin-bottom: 3rem;
+            font-size: 0.9rem;
+        }
+
+        .page-content h2 {
+            font-size: 1.3rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+
+        .page-content p, .page-content li {
+            color: var(--gray);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .page-content ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-content a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .page-content a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight-box {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-left: 3px solid var(--gold);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            color: var(--white);
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem;
+            background: var(--darker);
+            border-top: 1px solid var(--glass-border);
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .page-content {
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            .page-content h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/app_icon.png" alt="VINTAGE VAULT">
+                <span class="logo-text">VINTAGE VAULT</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="index.html#download">Download</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <main class="page-content">
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Last updated: December 2024</p>
+
+        <div class="highlight-box">
+            <p><strong>VINTAGE VAULT respects your privacy.</strong> We do not collect, store, or share any personal information. Your data stays on your device.</p>
+        </div>
+
+        <h2>Overview</h2>
+        <p>
+            VINTAGE VAULT ("the App") is a personal catalog application for managing your collection of vintage guitars, amplifiers, and pedals. We are committed to protecting your privacy and being transparent about our practices.
+        </p>
+
+        <h2>Data Collection</h2>
+        <p>
+            <strong>We do not collect any data.</strong> The App does not:
+        </p>
+        <ul>
+            <li>Collect personal information</li>
+            <li>Track your location</li>
+            <li>Access your contacts</li>
+            <li>Monitor your usage</li>
+            <li>Use analytics or tracking services</li>
+            <li>Require account creation or login</li>
+        </ul>
+
+        <h2>Data Storage</h2>
+        <p>
+            All data you enter into the App—including photos, gear information, purchase history, and notes—is stored <strong>locally on your device only</strong>. This data is:
+        </p>
+        <ul>
+            <li>Never uploaded to external servers</li>
+            <li>Never shared with third parties</li>
+            <li>Never accessible to us or anyone else</li>
+            <li>Completely under your control</li>
+        </ul>
+
+        <h2>Photo Access</h2>
+        <p>
+            The App requests access to your photo library solely to allow you to select images for your gear collection. We:
+        </p>
+        <ul>
+            <li>Only access photos you explicitly select</li>
+            <li>Store selected photos locally within the App</li>
+            <li>Never upload photos to any server</li>
+            <li>Never share photos with any third party</li>
+        </ul>
+
+        <h2>Advertising</h2>
+        <p>
+            The App may display advertisements provided by Google AdMob. These ads may use device identifiers to serve relevant content. You can limit ad tracking through your device's privacy settings. We do not have access to any data collected by the advertising network.
+        </p>
+
+        <h2>In-App Purchases</h2>
+        <p>
+            The App offers optional in-app purchases to remove advertisements. These transactions are processed entirely by Apple through the App Store. We do not collect or store any payment information.
+        </p>
+
+        <h2>Data Deletion</h2>
+        <p>
+            Since all data is stored locally on your device, you can delete all App data at any time by:
+        </p>
+        <ul>
+            <li>Deleting individual items within the App</li>
+            <li>Uninstalling the App (this will remove all data)</li>
+        </ul>
+
+        <h2>Children's Privacy</h2>
+        <p>
+            The App does not knowingly collect any information from children. The App is designed for general audiences and does not contain any content inappropriate for children.
+        </p>
+
+        <h2>Changes to This Policy</h2>
+        <p>
+            We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date. We encourage you to review this policy periodically.
+        </p>
+
+        <h2>Contact Us</h2>
+        <p>
+            If you have any questions about this Privacy Policy or the App, please contact us at:
+        </p>
+        <p>
+            <a href="mailto:support@example.com">support@example.com</a>
+        </p>
+        <p>
+            Or visit our <a href="support.html">Support page</a> for more information.
+        </p>
+
+        <div class="highlight-box">
+            <p><strong>Your collection is yours alone.</strong> We believe your data belongs to you, and we've designed VINTAGE VAULT with that principle at its core.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 VINTAGE VAULT. All rights reserved.</p>
+    </footer>
+</body>
+</html>
