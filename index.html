@@ -39,6 +39,30 @@
             overflow-x: hidden;
         }
 
+        /* Language toggle */
+        html.lang-en .lang-ja,
+        html.lang-ja .lang-en {
+            display: none;
+        }
+
+        .lang-toggle {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            color: var(--gold);
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .lang-toggle:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--gold-dark);
+        }
+
         /* Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
@@ -99,6 +123,12 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
         }
 
         .nav-links {
@@ -645,13 +675,18 @@
                 <img src="images/app_icon.png" alt="VINTAGE VAULT">
                 <span class="logo-text">VINTAGE VAULT</span>
             </a>
-            <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#download">Download</a></li>
-                <li><a href="privacy.html">Privacy</a></li>
-                <li><a href="support.html">Support</a></li>
-            </ul>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#features"><span class="lang-en">Features</span><span class="lang-ja">機能</span></a></li>
+                    <li><a href="#gallery"><span class="lang-en">Gallery</span><span class="lang-ja">ギャラリー</span></a></li>
+                    <li><a href="#download"><span class="lang-en">Download</span><span class="lang-ja">ダウンロード</span></a></li>
+                    <li><a href="privacy.html"><span class="lang-en">Privacy</span><span class="lang-ja">プライバシー</span></a></li>
+                    <li><a href="support.html"><span class="lang-en">Support</span><span class="lang-ja">サポート</span></a></li>
+                </ul>
+                <button class="lang-toggle" id="langToggle" onclick="toggleLang()">
+                    <span class="lang-en">JA</span><span class="lang-ja">EN</span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -663,20 +698,20 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <img src="images/app_icon.png" alt="VINTAGE VAULT" class="app-icon-float">
-            <span class="hero-badge">For Collectors</span>
+            <span class="hero-badge"><span class="lang-en">For Collectors</span><span class="lang-ja">コレクターのために</span></span>
             <h1 class="hero-title">VINTAGE VAULT</h1>
             <p class="hero-subtitle">
-                The ultimate catalog for your vintage guitars, iconic tube amps, and rare pedals.
-                Document your treasures in style.
+                <span class="lang-en">The ultimate catalog for your vintage guitars, iconic tube amps, and rare pedals. Document your treasures in style.</span>
+                <span class="lang-ja">ビンテージギター、真空管アンプ、レアペダルのための究極のカタログアプリ。あなたのコレクションをスタイリッシュに記録しよう。</span>
             </p>
             <div class="hero-cta">
                 <a href="#download" class="btn btn-primary">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/>
                     </svg>
-                    Download on App Store
+                    <span class="lang-en">Download on App Store</span><span class="lang-ja">App Storeでダウンロード</span>
                 </a>
-                <a href="#features" class="btn btn-secondary">Learn More</a>
+                <a href="#features" class="btn btn-secondary"><span class="lang-en">Learn More</span><span class="lang-ja">詳しく見る</span></a>
             </div>
         </div>
     </section>
@@ -685,53 +720,60 @@
     <section class="features" id="features">
         <div class="section-container">
             <div class="section-header">
-                <p class="section-label">Features</p>
-                <h2 class="section-title">Everything You Need</h2>
+                <p class="section-label"><span class="lang-en">Features</span><span class="lang-ja">機能</span></p>
+                <h2 class="section-title"><span class="lang-en">Everything You Need</span><span class="lang-ja">必要なすべてがここに</span></h2>
                 <p class="section-desc">
-                    A powerful yet simple way to catalog and cherish your vintage gear collection.
+                    <span class="lang-en">A powerful yet simple way to catalog and cherish your vintage gear collection.</span>
+                    <span class="lang-ja">ビンテージギアのコレクションを簡単かつパワフルに管理・記録できます。</span>
                 </p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">📸</div>
-                    <h3 class="feature-title">Photo Gallery</h3>
+                    <h3 class="feature-title"><span class="lang-en">Photo Gallery</span><span class="lang-ja">フォトギャラリー</span></h3>
                     <p class="feature-desc">
-                        Store up to 10 photos per item. Swipe through your collection in a beautiful Instagram-style grid.
+                        <span class="lang-en">Store up to 10 photos per item. Swipe through your collection in a beautiful Instagram-style grid.</span>
+                        <span class="lang-ja">1アイテムにつき最大10枚の写真を保存。美しいグリッド表示でコレクションを閲覧できます。</span>
                     </p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🎸</div>
-                    <h3 class="feature-title">Detailed Records</h3>
+                    <h3 class="feature-title"><span class="lang-en">Detailed Records</span><span class="lang-ja">詳細な記録</span></h3>
                     <p class="feature-desc">
-                        Track model name, manufacturer, year, purchase info, and personal notes for every piece of gear.
+                        <span class="lang-en">Track model name, manufacturer, year, purchase info, and personal notes for every piece of gear.</span>
+                        <span class="lang-ja">モデル名、メーカー、年式、購入情報、メモなど、あらゆる情報を記録できます。</span>
                     </p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📁</div>
-                    <h3 class="feature-title">Smart Categories</h3>
+                    <h3 class="feature-title"><span class="lang-en">Smart Categories</span><span class="lang-ja">スマートカテゴリ</span></h3>
                     <p class="feature-desc">
-                        Organize your collection by guitars, amps, and pedals. Keep everything sorted and easy to find.
+                        <span class="lang-en">Organize your collection by guitars, amps, and pedals. Keep everything sorted and easy to find.</span>
+                        <span class="lang-ja">ギター、アンプ、ペダルでコレクションを整理。すべてが見つけやすく管理できます。</span>
                     </p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">💰</div>
-                    <h3 class="feature-title">Purchase History</h3>
+                    <h3 class="feature-title"><span class="lang-en">Purchase History</span><span class="lang-ja">購入履歴</span></h3>
                     <p class="feature-desc">
-                        Never forget where, when, and how much you paid. Track your investment over time.
+                        <span class="lang-en">Never forget where, when, and how much you paid. Track your investment over time.</span>
+                        <span class="lang-ja">購入場所、日時、金額を記録。コレクションへの投資を時系列で追跡できます。</span>
                     </p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🎨</div>
-                    <h3 class="feature-title">Custom Splash</h3>
+                    <h3 class="feature-title"><span class="lang-en">Custom Splash</span><span class="lang-ja">カスタムスプラッシュ</span></h3>
                     <p class="feature-desc">
-                        Set your favorite photo as the launch screen, or let the app surprise you with a random pick.
+                        <span class="lang-en">Set your favorite photo as the launch screen, or let the app surprise you with a random pick.</span>
+                        <span class="lang-ja">お気に入りの写真を起動画面に設定。ランダム表示で毎回違う楽しみも。</span>
                     </p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🔒</div>
-                    <h3 class="feature-title">100% Private</h3>
+                    <h3 class="feature-title"><span class="lang-en">100% Private</span><span class="lang-ja">100% プライベート</span></h3>
                     <p class="feature-desc">
-                        All data stays on your device. No cloud uploads, no accounts required, no tracking.
+                        <span class="lang-en">All data stays on your device. No cloud uploads, no accounts required, no tracking.</span>
+                        <span class="lang-ja">すべてのデータは端末内に保存。クラウドへのアップロード、アカウント作成、トラッキングは一切ありません。</span>
                     </p>
                 </div>
             </div>
@@ -742,10 +784,11 @@
     <section class="gallery" id="gallery">
         <div class="section-container">
             <div class="section-header">
-                <p class="section-label">Gallery</p>
-                <h2 class="section-title">Your Collection, Beautifully Displayed</h2>
+                <p class="section-label"><span class="lang-en">Gallery</span><span class="lang-ja">ギャラリー</span></p>
+                <h2 class="section-title"><span class="lang-en">Your Collection, Beautifully Displayed</span><span class="lang-ja">コレクションを美しく表示</span></h2>
                 <p class="section-desc">
-                    A sleek, dark interface that makes your vintage gear shine.
+                    <span class="lang-en">A sleek, dark interface that makes your vintage gear shine.</span>
+                    <span class="lang-ja">洗練されたダークUIがビンテージギアの魅力を引き立てます。</span>
                 </p>
             </div>
             <div class="gallery-grid">
@@ -776,9 +819,10 @@
         <div class="download-card">
             <div class="download-content">
                 <img src="images/app_icon.png" alt="VINTAGE VAULT" class="download-icon">
-                <h2 class="download-title">Get VINTAGE VAULT</h2>
+                <h2 class="download-title"><span class="lang-en">Get VINTAGE VAULT</span><span class="lang-ja">VINTAGE VAULTを入手</span></h2>
                 <p class="download-desc">
-                    Start cataloging your collection today. Free download with optional premium features.
+                    <span class="lang-en">Start cataloging your collection today. Free download with optional premium features.</span>
+                    <span class="lang-ja">今すぐコレクションの管理を始めよう。無料ダウンロード、プレミアム機能はオプション。</span>
                 </p>
                 <a href="https://apps.apple.com/us/app/vintage-vault-guitar-amp/id6756634253" target="_blank">
                     <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="app-store-badge">
@@ -796,34 +840,56 @@
                         <img src="images/app_icon.png" alt="VINTAGE VAULT">
                         <span class="logo-text">VINTAGE VAULT</span>
                     </a>
-                    <p>By gear lovers, for gear lovers. The ultimate catalog app for vintage guitar enthusiasts.</p>
+                    <p><span class="lang-en">By gear lovers, for gear lovers. The ultimate catalog app for vintage guitar enthusiasts.</span><span class="lang-ja">ギア愛好家による、ギア愛好家のための究極のカタログアプリ。</span></p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-column">
                         <h4>App</h4>
                         <ul>
-                            <li><a href="#features">Features</a></li>
-                            <li><a href="#gallery">Gallery</a></li>
-                            <li><a href="#download">Download</a></li>
+                            <li><a href="#features"><span class="lang-en">Features</span><span class="lang-ja">機能</span></a></li>
+                            <li><a href="#gallery"><span class="lang-en">Gallery</span><span class="lang-ja">ギャラリー</span></a></li>
+                            <li><a href="#download"><span class="lang-en">Download</span><span class="lang-ja">ダウンロード</span></a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
                         <h4>Legal</h4>
                         <ul>
-                            <li><a href="privacy.html">Privacy Policy</a></li>
-                            <li><a href="support.html">Support</a></li>
+                            <li><a href="privacy.html"><span class="lang-en">Privacy Policy</span><span class="lang-ja">プライバシーポリシー</span></a></li>
+                            <li><a href="support.html"><span class="lang-en">Support</span><span class="lang-ja">サポート</span></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2024 VINTAGE VAULT. All rights reserved.</p>
-                <p>Made with ♥ for vintage gear collectors</p>
+                <p><span class="lang-en">Made with ♥ for vintage gear collectors</span><span class="lang-ja">ビンテージギアコレクターに♥を込めて</span></p>
             </div>
         </div>
     </footer>
 
     <script>
+        // Language detection and toggle
+        function getLang() {
+            var saved = localStorage.getItem('vv-lang');
+            if (saved) return saved;
+            var browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+            return browserLang.startsWith('ja') ? 'ja' : 'en';
+        }
+
+        function setLang(lang) {
+            document.documentElement.className = 'lang-' + lang;
+            document.documentElement.lang = lang;
+            localStorage.setItem('vv-lang', lang);
+        }
+
+        function toggleLang() {
+            var current = getLang();
+            var next = current === 'ja' ? 'en' : 'ja';
+            setLang(next);
+        }
+
+        setLang(getLang());
+
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {

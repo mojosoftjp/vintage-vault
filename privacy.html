@@ -34,6 +34,30 @@
             line-height: 1.6;
         }
 
+        /* Language toggle */
+        html.lang-en .lang-ja,
+        html.lang-ja .lang-en {
+            display: none;
+        }
+
+        .lang-toggle {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            color: var(--gold);
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .lang-toggle:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--gold-dark);
+        }
+
         /* Navigation */
         nav {
             position: fixed;
@@ -77,6 +101,12 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
         }
 
         .nav-links {
@@ -198,107 +228,123 @@
                 <img src="images/app_icon.png" alt="VINTAGE VAULT">
                 <span class="logo-text">VINTAGE VAULT</span>
             </a>
-            <ul class="nav-links">
-                <li><a href="index.html#features">Features</a></li>
-                <li><a href="index.html#gallery">Gallery</a></li>
-                <li><a href="index.html#download">Download</a></li>
-                <li><a href="privacy.html">Privacy</a></li>
-                <li><a href="support.html">Support</a></li>
-            </ul>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="index.html#features"><span class="lang-en">Features</span><span class="lang-ja">機能</span></a></li>
+                    <li><a href="index.html#gallery"><span class="lang-en">Gallery</span><span class="lang-ja">ギャラリー</span></a></li>
+                    <li><a href="index.html#download"><span class="lang-en">Download</span><span class="lang-ja">ダウンロード</span></a></li>
+                    <li><a href="privacy.html"><span class="lang-en">Privacy</span><span class="lang-ja">プライバシー</span></a></li>
+                    <li><a href="support.html"><span class="lang-en">Support</span><span class="lang-ja">サポート</span></a></li>
+                </ul>
+                <button class="lang-toggle" onclick="toggleLang()">
+                    <span class="lang-en">JA</span><span class="lang-ja">EN</span>
+                </button>
+            </div>
         </div>
     </nav>
 
     <!-- Page Content -->
     <main class="page-content">
-        <h1>Privacy Policy</h1>
-        <p class="last-updated">Last updated: December 2024</p>
+        <h1><span class="lang-en">Privacy Policy</span><span class="lang-ja">プライバシーポリシー</span></h1>
+        <p class="last-updated"><span class="lang-en">Last updated: December 2024</span><span class="lang-ja">最終更新: 2024年12月</span></p>
 
         <div class="highlight-box">
-            <p><strong>VINTAGE VAULT respects your privacy.</strong> We do not collect, store, or share any personal information. Your data stays on your device.</p>
+            <p><span class="lang-en"><strong>VINTAGE VAULT respects your privacy.</strong> We do not collect, store, or share any personal information. Your data stays on your device.</span><span class="lang-ja"><strong>VINTAGE VAULTはあなたのプライバシーを尊重します。</strong>個人情報の収集、保存、共有は一切行いません。データはすべてお使いの端末内に保管されます。</span></p>
         </div>
 
-        <h2>Overview</h2>
+        <h2><span class="lang-en">Overview</span><span class="lang-ja">概要</span></h2>
         <p>
-            VINTAGE VAULT ("the App") is a personal catalog application for managing your collection of vintage guitars, amplifiers, and pedals. We are committed to protecting your privacy and being transparent about our practices.
+            <span class="lang-en">VINTAGE VAULT ("the App") is a personal catalog application for managing your collection of vintage guitars, amplifiers, and pedals. We are committed to protecting your privacy and being transparent about our practices.</span>
+            <span class="lang-ja">VINTAGE VAULT（以下「本アプリ」）は、ビンテージギター、アンプ、ペダルのコレクションを管理するための個人カタログアプリです。お客様のプライバシー保護と透明性のある運営に努めています。</span>
         </p>
 
-        <h2>Data Collection</h2>
+        <h2><span class="lang-en">Data Collection</span><span class="lang-ja">データの収集</span></h2>
         <p>
-            <strong>We do not collect any data.</strong> The App does not:
-        </p>
-        <ul>
-            <li>Collect personal information</li>
-            <li>Track your location</li>
-            <li>Access your contacts</li>
-            <li>Monitor your usage</li>
-            <li>Use analytics or tracking services</li>
-            <li>Require account creation or login</li>
-        </ul>
-
-        <h2>Data Storage</h2>
-        <p>
-            All data you enter into the App—including photos, gear information, purchase history, and notes—is stored <strong>locally on your device only</strong>. This data is:
+            <span class="lang-en"><strong>We do not collect any data.</strong> The App does not:</span>
+            <span class="lang-ja"><strong>本アプリはデータを一切収集しません。</strong>以下の行為は行いません：</span>
         </p>
         <ul>
-            <li>Never uploaded to external servers</li>
-            <li>Never shared with third parties</li>
-            <li>Never accessible to us or anyone else</li>
-            <li>Completely under your control</li>
+            <li><span class="lang-en">Collect personal information</span><span class="lang-ja">個人情報の収集</span></li>
+            <li><span class="lang-en">Track your location</span><span class="lang-ja">位置情報の追跡</span></li>
+            <li><span class="lang-en">Access your contacts</span><span class="lang-ja">連絡先へのアクセス</span></li>
+            <li><span class="lang-en">Monitor your usage</span><span class="lang-ja">使用状況の監視</span></li>
+            <li><span class="lang-en">Use analytics or tracking services</span><span class="lang-ja">分析・トラッキングサービスの使用</span></li>
+            <li><span class="lang-en">Require account creation or login</span><span class="lang-ja">アカウント作成やログインの要求</span></li>
         </ul>
 
-        <h2>Photo Access</h2>
+        <h2><span class="lang-en">Data Storage</span><span class="lang-ja">データの保存</span></h2>
         <p>
-            The App requests access to your photo library solely to allow you to select images for your gear collection. We:
+            <span class="lang-en">All data you enter into the App—including photos, gear information, purchase history, and notes—is stored <strong>locally on your device only</strong>. This data is:</span>
+            <span class="lang-ja">本アプリに入力されたすべてのデータ（写真、機材情報、購入履歴、メモなど）は、<strong>お使いの端末内にのみ</strong>保存されます。このデータは：</span>
         </p>
         <ul>
-            <li>Only access photos you explicitly select</li>
-            <li>Store selected photos locally within the App</li>
-            <li>Never upload photos to any server</li>
-            <li>Never share photos with any third party</li>
+            <li><span class="lang-en">Never uploaded to external servers</span><span class="lang-ja">外部サーバーにアップロードされることはありません</span></li>
+            <li><span class="lang-en">Never shared with third parties</span><span class="lang-ja">第三者と共有されることはありません</span></li>
+            <li><span class="lang-en">Never accessible to us or anyone else</span><span class="lang-ja">開発者や他の誰もアクセスできません</span></li>
+            <li><span class="lang-en">Completely under your control</span><span class="lang-ja">すべてお客様の管理下にあります</span></li>
         </ul>
 
-        <h2>Advertising</h2>
+        <h2><span class="lang-en">Photo Access</span><span class="lang-ja">写真へのアクセス</span></h2>
         <p>
-            The App may display advertisements provided by Google AdMob. These ads may use device identifiers to serve relevant content. You can limit ad tracking through your device's privacy settings. We do not have access to any data collected by the advertising network.
-        </p>
-
-        <h2>In-App Purchases</h2>
-        <p>
-            The App offers optional in-app purchases to remove advertisements. These transactions are processed entirely by Apple through the App Store. We do not collect or store any payment information.
-        </p>
-
-        <h2>Data Deletion</h2>
-        <p>
-            Since all data is stored locally on your device, you can delete all App data at any time by:
+            <span class="lang-en">The App requests access to your photo library solely to allow you to select images for your gear collection. We:</span>
+            <span class="lang-ja">本アプリは、コレクションに画像を追加するためにのみ写真ライブラリへのアクセスを要求します：</span>
         </p>
         <ul>
-            <li>Deleting individual items within the App</li>
-            <li>Uninstalling the App (this will remove all data)</li>
+            <li><span class="lang-en">Only access photos you explicitly select</span><span class="lang-ja">お客様が明示的に選択した写真のみにアクセスします</span></li>
+            <li><span class="lang-en">Store selected photos locally within the App</span><span class="lang-ja">選択された写真はアプリ内にローカル保存されます</span></li>
+            <li><span class="lang-en">Never upload photos to any server</span><span class="lang-ja">写真をサーバーにアップロードすることはありません</span></li>
+            <li><span class="lang-en">Never share photos with any third party</span><span class="lang-ja">写真を第三者と共有することはありません</span></li>
         </ul>
 
-        <h2>Children's Privacy</h2>
+        <h2><span class="lang-en">Advertising</span><span class="lang-ja">広告</span></h2>
         <p>
-            The App does not knowingly collect any information from children. The App is designed for general audiences and does not contain any content inappropriate for children.
+            <span class="lang-en">The App may display advertisements provided by Google AdMob. These ads may use device identifiers to serve relevant content. You can limit ad tracking through your device's privacy settings. We do not have access to any data collected by the advertising network.</span>
+            <span class="lang-ja">本アプリはGoogle AdMobによる広告を表示する場合があります。これらの広告はデバイス識別子を使用して関連コンテンツを提供することがあります。端末のプライバシー設定から広告トラッキングを制限できます。広告ネットワークが収集するデータに開発者はアクセスできません。</span>
         </p>
 
-        <h2>Changes to This Policy</h2>
+        <h2><span class="lang-en">In-App Purchases</span><span class="lang-ja">アプリ内課金</span></h2>
         <p>
-            We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date. We encourage you to review this policy periodically.
+            <span class="lang-en">The App offers optional in-app purchases to remove advertisements. These transactions are processed entirely by Apple through the App Store. We do not collect or store any payment information.</span>
+            <span class="lang-ja">本アプリでは広告を削除するオプションのアプリ内課金を提供しています。これらの取引はすべてAppleのApp Storeを通じて処理されます。支払い情報の収集・保存は一切行いません。</span>
         </p>
 
-        <h2>Contact Us</h2>
+        <h2><span class="lang-en">Data Deletion</span><span class="lang-ja">データの削除</span></h2>
         <p>
-            If you have any questions about this Privacy Policy or the App, please contact us at:
+            <span class="lang-en">Since all data is stored locally on your device, you can delete all App data at any time by:</span>
+            <span class="lang-ja">すべてのデータは端末内に保存されているため、以下の方法でいつでも削除できます：</span>
+        </p>
+        <ul>
+            <li><span class="lang-en">Deleting individual items within the App</span><span class="lang-ja">アプリ内で個別のアイテムを削除</span></li>
+            <li><span class="lang-en">Uninstalling the App (this will remove all data)</span><span class="lang-ja">アプリをアンインストール（すべてのデータが削除されます）</span></li>
+        </ul>
+
+        <h2><span class="lang-en">Children's Privacy</span><span class="lang-ja">お子様のプライバシー</span></h2>
+        <p>
+            <span class="lang-en">The App does not knowingly collect any information from children. The App is designed for general audiences and does not contain any content inappropriate for children.</span>
+            <span class="lang-ja">本アプリはお子様から情報を意図的に収集することはありません。本アプリは一般ユーザー向けに設計されており、お子様にとって不適切なコンテンツは含まれていません。</span>
+        </p>
+
+        <h2><span class="lang-en">Changes to This Policy</span><span class="lang-ja">ポリシーの変更</span></h2>
+        <p>
+            <span class="lang-en">We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date. We encourage you to review this policy periodically.</span>
+            <span class="lang-ja">本プライバシーポリシーは随時更新される場合があります。変更があった場合は、更新日とともにこのページに掲載されます。定期的な確認をお勧めします。</span>
+        </p>
+
+        <h2><span class="lang-en">Contact Us</span><span class="lang-ja">お問い合わせ</span></h2>
+        <p>
+            <span class="lang-en">If you have any questions about this Privacy Policy or the App, please contact us at:</span>
+            <span class="lang-ja">本プライバシーポリシーまたはアプリについてご質問がある場合は、以下までお問い合わせください：</span>
         </p>
         <p>
             <a href="mailto:support@mojosoft.biz">support@mojosoft.biz</a>
         </p>
         <p>
-            Or visit our <a href="support.html">Support page</a> for more information.
+            <span class="lang-en">Or visit our <a href="support.html">Support page</a> for more information.</span>
+            <span class="lang-ja">詳しくは<a href="support.html">サポートページ</a>をご覧ください。</span>
         </p>
 
         <div class="highlight-box">
-            <p><strong>Your collection is yours alone.</strong> We believe your data belongs to you, and we've designed VINTAGE VAULT with that principle at its core.</p>
+            <p><span class="lang-en"><strong>Your collection is yours alone.</strong> We believe your data belongs to you, and we've designed VINTAGE VAULT with that principle at its core.</span><span class="lang-ja"><strong>あなたのコレクションはあなただけのもの。</strong>データはお客様のものであるという信念のもと、VINTAGE VAULTを設計しています。</span></p>
         </div>
     </main>
 
@@ -306,5 +352,28 @@
     <footer>
         <p>&copy; 2024 VINTAGE VAULT. All rights reserved.</p>
     </footer>
+
+    <script>
+        function getLang() {
+            var saved = localStorage.getItem('vv-lang');
+            if (saved) return saved;
+            var browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+            return browserLang.startsWith('ja') ? 'ja' : 'en';
+        }
+
+        function setLang(lang) {
+            document.documentElement.className = 'lang-' + lang;
+            document.documentElement.lang = lang;
+            localStorage.setItem('vv-lang', lang);
+        }
+
+        function toggleLang() {
+            var current = getLang();
+            var next = current === 'ja' ? 'en' : 'ja';
+            setLang(next);
+        }
+
+        setLang(getLang());
+    </script>
 </body>
 </html>

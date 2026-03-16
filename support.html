@@ -34,6 +34,30 @@
             line-height: 1.6;
         }
 
+        /* Language toggle */
+        html.lang-en .lang-ja,
+        html.lang-ja .lang-en {
+            display: none;
+        }
+
+        .lang-toggle {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            color: var(--gold);
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .lang-toggle:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--gold-dark);
+        }
+
         /* Navigation */
         nav {
             position: fixed;
@@ -77,6 +101,12 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
         }
 
         .nav-links {
@@ -294,25 +324,30 @@
                 <img src="images/app_icon.png" alt="VINTAGE VAULT">
                 <span class="logo-text">VINTAGE VAULT</span>
             </a>
-            <ul class="nav-links">
-                <li><a href="index.html#features">Features</a></li>
-                <li><a href="index.html#gallery">Gallery</a></li>
-                <li><a href="index.html#download">Download</a></li>
-                <li><a href="privacy.html">Privacy</a></li>
-                <li><a href="support.html">Support</a></li>
-            </ul>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="index.html#features"><span class="lang-en">Features</span><span class="lang-ja">機能</span></a></li>
+                    <li><a href="index.html#gallery"><span class="lang-en">Gallery</span><span class="lang-ja">ギャラリー</span></a></li>
+                    <li><a href="index.html#download"><span class="lang-en">Download</span><span class="lang-ja">ダウンロード</span></a></li>
+                    <li><a href="privacy.html"><span class="lang-en">Privacy</span><span class="lang-ja">プライバシー</span></a></li>
+                    <li><a href="support.html"><span class="lang-en">Support</span><span class="lang-ja">サポート</span></a></li>
+                </ul>
+                <button class="lang-toggle" onclick="toggleLang()">
+                    <span class="lang-en">JA</span><span class="lang-ja">EN</span>
+                </button>
+            </div>
         </div>
     </nav>
 
     <!-- Page Content -->
     <main class="page-content">
-        <h1>Support</h1>
-        <p class="subtitle">We're here to help you get the most out of VINTAGE VAULT.</p>
+        <h1><span class="lang-en">Support</span><span class="lang-ja">サポート</span></h1>
+        <p class="subtitle"><span class="lang-en">We're here to help you get the most out of VINTAGE VAULT.</span><span class="lang-ja">VINTAGE VAULTを最大限に活用するためのサポートページです。</span></p>
 
         <!-- Contact Card -->
         <div class="contact-card">
-            <h3>Need Help?</h3>
-            <p>Have questions, found a bug, or want to suggest a feature? We'd love to hear from you.</p>
+            <h3><span class="lang-en">Need Help?</span><span class="lang-ja">お困りですか？</span></h3>
+            <p><span class="lang-en">Have questions, found a bug, or want to suggest a feature? We'd love to hear from you.</span><span class="lang-ja">ご質問、バグ報告、機能のご提案などお気軽にお問い合わせください。</span></p>
             <a href="mailto:support@mojosoft.biz" class="contact-email">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
@@ -321,113 +356,115 @@
             </a>
         </div>
 
-        <h2>Getting Started</h2>
+        <h2><span class="lang-en">Getting Started</span><span class="lang-ja">はじめに</span></h2>
         <div class="feature-list">
             <div class="feature-item">
                 <span class="feature-icon">➕</span>
                 <div class="feature-text">
-                    <h4>Add Your First Item</h4>
-                    <p>Tap the + button in the top right corner to add a guitar, amp, or pedal to your collection.</p>
+                    <h4><span class="lang-en">Add Your First Item</span><span class="lang-ja">最初のアイテムを追加</span></h4>
+                    <p><span class="lang-en">Tap the + button in the top right corner to add a guitar, amp, or pedal to your collection.</span><span class="lang-ja">右上の＋ボタンをタップして、ギター、アンプ、ペダルをコレクションに追加します。</span></p>
                 </div>
             </div>
             <div class="feature-item">
                 <span class="feature-icon">📸</span>
                 <div class="feature-text">
-                    <h4>Add Photos</h4>
-                    <p>Select up to 10 photos from your library for each item. Tap the photo area to add more.</p>
+                    <h4><span class="lang-en">Add Photos</span><span class="lang-ja">写真を追加</span></h4>
+                    <p><span class="lang-en">Select up to 10 photos from your library for each item. Tap the photo area to add more.</span><span class="lang-ja">各アイテムにつき最大10枚の写真をライブラリから選択できます。写真エリアをタップして追加します。</span></p>
                 </div>
             </div>
             <div class="feature-item">
                 <span class="feature-icon">✏️</span>
                 <div class="feature-text">
-                    <h4>Edit Details</h4>
-                    <p>Tap any item to view details, then use the menu (•••) to edit or delete.</p>
+                    <h4><span class="lang-en">Edit Details</span><span class="lang-ja">詳細を編集</span></h4>
+                    <p><span class="lang-en">Tap any item to view details, then use the menu (•••) to edit or delete.</span><span class="lang-ja">アイテムをタップして詳細を表示し、メニュー（•••）から編集・削除ができます。</span></p>
                 </div>
             </div>
             <div class="feature-item">
                 <span class="feature-icon">🖼️</span>
                 <div class="feature-text">
-                    <h4>Set Splash Image</h4>
-                    <p>Long-press any photo to set it as your custom splash screen when the app launches.</p>
+                    <h4><span class="lang-en">Set Splash Image</span><span class="lang-ja">スプラッシュ画像を設定</span></h4>
+                    <p><span class="lang-en">Long-press any photo to set it as your custom splash screen when the app launches.</span><span class="lang-ja">写真を長押しして、アプリ起動時のスプラッシュ画面に設定できます。</span></p>
                 </div>
             </div>
         </div>
 
-        <h2>Frequently Asked Questions</h2>
+        <h2><span class="lang-en">Frequently Asked Questions</span><span class="lang-ja">よくある質問</span></h2>
 
         <div class="faq-item">
-            <div class="faq-question">How many photos can I add per item?</div>
-            <p class="faq-answer">You can add up to 10 photos for each gear item. Photos can be added when creating a new item or when editing an existing one.</p>
+            <div class="faq-question"><span class="lang-en">How many photos can I add per item?</span><span class="lang-ja">1アイテムに何枚の写真を追加できますか？</span></div>
+            <p class="faq-answer"><span class="lang-en">You can add up to 10 photos for each gear item. Photos can be added when creating a new item or when editing an existing one.</span><span class="lang-ja">各アイテムに最大10枚の写真を追加できます。新規作成時または編集時に追加可能です。</span></p>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">Is my data backed up?</div>
-            <p class="faq-answer">Currently, all data is stored locally on your device. If you uninstall the app, your data will be deleted. We recommend keeping your own photo backups. Cloud sync is planned for a future update.</p>
+            <div class="faq-question"><span class="lang-en">Is my data backed up?</span><span class="lang-ja">データはバックアップされますか？</span></div>
+            <p class="faq-answer"><span class="lang-en">Currently, all data is stored locally on your device. If you uninstall the app, your data will be deleted. We recommend keeping your own photo backups. Cloud sync is planned for a future update.</span><span class="lang-ja">現在、すべてのデータは端末内にローカル保存されています。アプリをアンインストールするとデータは削除されます。写真のバックアップを取っておくことをお勧めします。クラウド同期は今後のアップデートで対応予定です。</span></p>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">Can I export my collection?</div>
-            <p class="faq-answer">Export functionality is coming in a future update. This will include options to export as PDF, CSV, or image gallery.</p>
+            <div class="faq-question"><span class="lang-en">Can I export my collection?</span><span class="lang-ja">コレクションをエクスポートできますか？</span></div>
+            <p class="faq-answer"><span class="lang-en">Export functionality is coming in a future update. This will include options to export as PDF, CSV, or image gallery.</span><span class="lang-ja">エクスポート機能は今後のアップデートで追加予定です。PDF、CSV、画像ギャラリーとしてのエクスポートに対応する予定です。</span></p>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">How do I remove ads?</div>
-            <p class="faq-answer">You can remove all advertisements by purchasing the "Remove Ads" option in Settings. This is a one-time purchase that unlocks the ad-free experience permanently.</p>
+            <div class="faq-question"><span class="lang-en">How do I remove ads?</span><span class="lang-ja">広告を削除するには？</span></div>
+            <p class="faq-answer"><span class="lang-en">You can remove all advertisements by purchasing the "Remove Ads" option in Settings. This is a one-time purchase that unlocks the ad-free experience permanently.</span><span class="lang-ja">設定から「広告を削除」オプションを購入することで、すべての広告を削除できます。買い切りで永久に広告なしになります。</span></p>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">What's the random splash feature?</div>
-            <p class="faq-answer">When enabled in Settings, the app will randomly select one of your gear photos to display on the launch screen each time you open the app. It's a fun way to rediscover your collection!</p>
+            <div class="faq-question"><span class="lang-en">What's the random splash feature?</span><span class="lang-ja">ランダムスプラッシュ機能とは？</span></div>
+            <p class="faq-answer"><span class="lang-en">When enabled in Settings, the app will randomly select one of your gear photos to display on the launch screen each time you open the app. It's a fun way to rediscover your collection!</span><span class="lang-ja">設定で有効にすると、アプリ起動時にコレクションの写真をランダムに選んでスプラッシュ画面に表示します。コレクションを再発見する楽しい機能です！</span></p>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">Can I use this for other gear like keyboards or microphones?</div>
-            <p class="faq-answer">Currently, the app supports guitars, amps, and pedals. More categories are planned for future updates based on user feedback.</p>
+            <div class="faq-question"><span class="lang-en">Can I use this for other gear like keyboards or microphones?</span><span class="lang-ja">キーボードやマイクなど他の機材にも使えますか？</span></div>
+            <p class="faq-answer"><span class="lang-en">Currently, the app supports guitars, amps, and pedals. More categories are planned for future updates based on user feedback.</span><span class="lang-ja">現在はギター、アンプ、ペダルに対応しています。ユーザーのフィードバックを基に、今後のアップデートでカテゴリを追加予定です。</span></p>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">Is there an iPad version?</div>
-            <p class="faq-answer">The app works on iPad, but is currently optimized for iPhone. A dedicated iPad layout with multi-column support is planned for a future update.</p>
+            <div class="faq-question"><span class="lang-en">Is there an iPad version?</span><span class="lang-ja">iPad版はありますか？</span></div>
+            <p class="faq-answer"><span class="lang-en">The app works on iPad, but is currently optimized for iPhone. A dedicated iPad layout with multi-column support is planned for a future update.</span><span class="lang-ja">iPadでも動作しますが、現在はiPhone向けに最適化されています。マルチカラム対応の専用iPadレイアウトは今後のアップデートで対応予定です。</span></p>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">My app is crashing. What should I do?</div>
-            <p class="faq-answer">Please try the following: 1) Make sure you have the latest version of the app from the App Store. 2) Restart your device. 3) If the issue persists, please contact us with details about when the crash occurs.</p>
+            <div class="faq-question"><span class="lang-en">My app is crashing. What should I do?</span><span class="lang-ja">アプリがクラッシュします。どうすればいいですか？</span></div>
+            <p class="faq-answer"><span class="lang-en">Please try the following: 1) Make sure you have the latest version of the app from the App Store. 2) Restart your device. 3) If the issue persists, please contact us with details about when the crash occurs.</span><span class="lang-ja">以下をお試しください：1) App Storeから最新バージョンにアップデート。2) 端末を再起動。3) 問題が続く場合は、クラッシュが発生する状況を添えてお問い合わせください。</span></p>
         </div>
 
-        <h2>App Information</h2>
+        <h2><span class="lang-en">App Information</span><span class="lang-ja">アプリ情報</span></h2>
         <ul>
-            <li><strong>Version:</strong> 1.0</li>
-            <li><strong>Requires:</strong> iOS 17.0 or later</li>
-            <li><strong>Size:</strong> Varies (depends on your collection)</li>
-            <li><strong>Languages:</strong> English, Japanese</li>
+            <li><strong><span class="lang-en">Version:</span><span class="lang-ja">バージョン:</span></strong> 1.0</li>
+            <li><strong><span class="lang-en">Requires:</span><span class="lang-ja">対応OS:</span></strong> iOS 17.0<span class="lang-en"> or later</span><span class="lang-ja">以降</span></li>
+            <li><strong><span class="lang-en">Size:</span><span class="lang-ja">サイズ:</span></strong> <span class="lang-en">Varies (depends on your collection)</span><span class="lang-ja">可変（コレクションにより異なります）</span></li>
+            <li><strong><span class="lang-en">Languages:</span><span class="lang-ja">対応言語:</span></strong> <span class="lang-en">English, Japanese</span><span class="lang-ja">英語、日本語</span></li>
         </ul>
 
-        <h2>Feedback & Feature Requests</h2>
+        <h2><span class="lang-en">Feedback & Feature Requests</span><span class="lang-ja">フィードバック・機能リクエスト</span></h2>
         <p>
-            We're constantly improving VINTAGE VAULT based on feedback from collectors like you. If you have ideas for new features or improvements, please don't hesitate to reach out.
+            <span class="lang-en">We're constantly improving VINTAGE VAULT based on feedback from collectors like you. If you have ideas for new features or improvements, please don't hesitate to reach out.</span>
+            <span class="lang-ja">皆さまからのフィードバックをもとにVINTAGE VAULTを常に改善しています。新機能や改善のアイデアがあれば、お気軽にお知らせください。</span>
         </p>
         <p>
-            Some features we're considering for future updates:
+            <span class="lang-en">Some features we're considering for future updates:</span>
+            <span class="lang-ja">今後のアップデートで検討中の機能：</span>
         </p>
         <ul>
-            <li>iCloud sync across devices</li>
-            <li>Search and filter functionality</li>
-            <li>Sort options (by name, year, price, etc.)</li>
-            <li>More gear categories</li>
-            <li>Export to PDF/CSV</li>
-            <li>Collection statistics and insights</li>
-            <li>Apple Watch companion app</li>
+            <li><span class="lang-en">iCloud sync across devices</span><span class="lang-ja">iCloudによるデバイス間同期</span></li>
+            <li><span class="lang-en">Search and filter functionality</span><span class="lang-ja">検索・フィルター機能</span></li>
+            <li><span class="lang-en">Sort options (by name, year, price, etc.)</span><span class="lang-ja">並べ替えオプション（名前、年式、価格など）</span></li>
+            <li><span class="lang-en">More gear categories</span><span class="lang-ja">機材カテゴリの追加</span></li>
+            <li><span class="lang-en">Export to PDF/CSV</span><span class="lang-ja">PDF/CSVエクスポート</span></li>
+            <li><span class="lang-en">Collection statistics and insights</span><span class="lang-ja">コレクション統計・インサイト</span></li>
+            <li><span class="lang-en">Apple Watch companion app</span><span class="lang-ja">Apple Watchコンパニオンアプリ</span></li>
         </ul>
 
         <div class="contact-card">
-            <h3>Love the App?</h3>
-            <p>If VINTAGE VAULT helps you manage your collection, please consider leaving a review on the App Store. It helps other collectors find the app!</p>
+            <h3><span class="lang-en">Love the App?</span><span class="lang-ja">アプリを気に入っていただけましたか？</span></h3>
+            <p><span class="lang-en">If VINTAGE VAULT helps you manage your collection, please consider leaving a review on the App Store. It helps other collectors find the app!</span><span class="lang-ja">VINTAGE VAULTがコレクション管理に役立っていたら、App Storeでレビューを書いていただけると嬉しいです。他のコレクターがアプリを見つける助けになります！</span></p>
             <a href="https://apps.apple.com/app/vintage-vault" class="contact-email" style="background: linear-gradient(135deg, #007AFF, #5856D6);">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
                 </svg>
-                Rate on App Store
+                <span class="lang-en">Rate on App Store</span><span class="lang-ja">App Storeで評価する</span>
             </a>
         </div>
     </main>
@@ -436,5 +473,28 @@
     <footer>
         <p>&copy; 2024 VINTAGE VAULT. All rights reserved.</p>
     </footer>
+
+    <script>
+        function getLang() {
+            var saved = localStorage.getItem('vv-lang');
+            if (saved) return saved;
+            var browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+            return browserLang.startsWith('ja') ? 'ja' : 'en';
+        }
+
+        function setLang(lang) {
+            document.documentElement.className = 'lang-' + lang;
+            document.documentElement.lang = lang;
+            localStorage.setItem('vv-lang', lang);
+        }
+
+        function toggleLang() {
+            var current = getLang();
+            var next = current === 'ja' ? 'en' : 'ja';
+            setLang(next);
+        }
+
+        setLang(getLang());
+    </script>
 </body>
 </html>
