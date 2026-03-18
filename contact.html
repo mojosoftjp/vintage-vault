@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - VINTAGE VAULT</title>
+    <meta name="description" content="Contact Mojosoft Co., Ltd. - Developer of VINTAGE VAULT">
+    <link rel="icon" type="image/png" href="images/app_icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #C9A227;
+            --gold-light: #E8D48A;
+            --gold-dark: #8B7355;
+            --black: #0A0A0A;
+            --dark: #111111;
+            --darker: #080808;
+            --white: #FAFAFA;
+            --gray: #888888;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Language toggle */
+        html.lang-en .lang-ja,
+        html.lang-ja .lang-en {
+            display: none;
+        }
+
+        .lang-toggle {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            color: var(--gold);
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .lang-toggle:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--gold-dark);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Page Content */
+        .page-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+
+        .page-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--white), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-content .subtitle {
+            color: var(--gray);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .page-content h2 {
+            font-size: 1.3rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+
+        .page-content p, .page-content li {
+            color: var(--gray);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .page-content a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .page-content a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Cards */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .contact-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            border-color: var(--gold-dark);
+            transform: translateY(-3px);
+        }
+
+        .contact-card .card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .contact-card .card-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: var(--black);
+        }
+
+        .contact-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card a.card-link {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Developer Section */
+        .developer-section {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin: 3rem 0;
+        }
+
+        .developer-section h2 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .developer-info {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .developer-info .info-row {
+            display: flex;
+            gap: 1rem;
+            align-items: baseline;
+        }
+
+        .developer-info .info-label {
+            color: var(--gray);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            min-width: 120px;
+            flex-shrink: 0;
+        }
+
+        .developer-info .info-value {
+            color: var(--white);
+            font-size: 1rem;
+        }
+
+        .developer-info .info-value a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .developer-info .info-value a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem;
+            background: var(--darker);
+            border-top: 1px solid var(--glass-border);
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .page-content {
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            .page-content h1 {
+                font-size: 2rem;
+            }
+
+            .developer-info .info-row {
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+
+            .developer-info .info-label {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/app_icon.png" alt="VINTAGE VAULT">
+                <span class="logo-text">VINTAGE VAULT</span>
+            </a>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="index.html#features"><span class="lang-en">Features</span><span class="lang-ja">機能</span></a></li>
+                    <li><a href="index.html#gallery"><span class="lang-en">Gallery</span><span class="lang-ja">ギャラリー</span></a></li>
+                    <li><a href="index.html#download"><span class="lang-en">Download</span><span class="lang-ja">ダウンロード</span></a></li>
+                    <li><a href="privacy.html"><span class="lang-en">Privacy</span><span class="lang-ja">プライバシー</span></a></li>
+                    <li><a href="support.html"><span class="lang-en">Support</span><span class="lang-ja">サポート</span></a></li>
+                    <li><a href="contact.html"><span class="lang-en">Contact</span><span class="lang-ja">お問い合わせ</span></a></li>
+                </ul>
+                <button class="lang-toggle" onclick="toggleLang()">
+                    <span class="lang-en">JA</span><span class="lang-ja">EN</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <main class="page-content">
+        <h1><span class="lang-en">Contact</span><span class="lang-ja">お問い合わせ</span></h1>
+        <p class="subtitle"><span class="lang-en">Questions, feedback, or just want to say hello? We'd love to hear from you.</span><span class="lang-ja">ご質問、フィードバック、その他なんでもお気軽にどうぞ。</span></p>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                </div>
+                <h3><span class="lang-en">Email</span><span class="lang-ja">メール</span></h3>
+                <p><span class="lang-en">For support, bug reports, and general inquiries.</span><span class="lang-ja">サポート、バグ報告、一般的なお問い合わせ。</span></p>
+                <a href="mailto:support@mojosoft.biz" class="card-link">support@mojosoft.biz</a>
+            </div>
+            <div class="contact-card">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                </div>
+                <h3><span class="lang-en">Response Time</span><span class="lang-ja">回答時間</span></h3>
+                <p><span class="lang-en">We typically respond within 24 hours.</span><span class="lang-ja">通常24時間以内にご返信いたします。</span></p>
+            </div>
+        </div>
+
+        <div class="developer-section">
+            <h2><span class="lang-en">Developer</span><span class="lang-ja">開発元</span></h2>
+            <div class="developer-info">
+                <div class="info-row">
+                    <span class="info-label"><span class="lang-en">Company</span><span class="lang-ja">会社名</span></span>
+                    <span class="info-value"><a href="https://mojosoft.biz/" target="_blank" rel="noopener">Mojosoft Co., Ltd.</a></span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label"><span class="lang-en">Website</span><span class="lang-ja">ウェブサイト</span></span>
+                    <span class="info-value"><a href="https://mojosoft.biz/" target="_blank" rel="noopener">https://mojosoft.biz/</a></span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label"><span class="lang-en">Email</span><span class="lang-ja">メール</span></span>
+                    <span class="info-value"><a href="mailto:support@mojosoft.biz">support@mojosoft.biz</a></span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label"><span class="lang-en">Products</span><span class="lang-ja">製品</span></span>
+                    <span class="info-value">
+                        <a href="https://apps.apple.com/us/app/vintage-vault-guitar-amp/id6756634253" target="_blank" rel="noopener">VINTAGE VAULT</a><span class="lang-en"> (iOS)</span><span class="lang-ja"> (iOS)</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 <a href="https://mojosoft.biz/" target="_blank" rel="noopener">Mojosoft Co., Ltd.</a> All rights reserved.</p>
+    </footer>
+
+    <script>
+        function getLang() {
+            var saved = localStorage.getItem('vv-lang');
+            if (saved) return saved;
+            var browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+            return browserLang.startsWith('ja') ? 'ja' : 'en';
+        }
+
+        function setLang(lang) {
+            document.documentElement.className = 'lang-' + lang;
+            document.documentElement.lang = lang;
+            localStorage.setItem('vv-lang', lang);
+        }
+
+        function toggleLang() {
+            var current = getLang();
+            var next = current === 'ja' ? 'en' : 'ja';
+            setLang(next);
+        }
+
+        setLang(getLang());
+    </script>
+</body>
+</html>
